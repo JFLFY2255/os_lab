@@ -1,0 +1,88 @@
+(THU.CST) os is loading ...
+
+Special kernel symbols:
+  entry  0xc010002a (phys)
+  etext  0xc0108d26 (phys)
+  edata  0xc0120a68 (phys)
+  end    0xc0121bb0 (phys)
+Kernel executable memory footprint: 135KB
+ebp:0xc011ff38 eip:0xc01009df args:ox00010094 ox00000000 oxc011ff68 oxc01000cb 
+    kern/debug/kdebug.c:308: print_stackframe+21
+ebp:0xc011ff48 eip:0xc0100cce args:ox00000000 ox00000000 ox00000000 oxc011ffb8 
+    kern/debug/kmonitor.c:129: mon_backtrace+10
+ebp:0xc011ff68 eip:0xc01000cb args:ox00000000 oxc011ff90 oxffff0000 oxc011ff94 
+    kern/init/init.c:57: grade_backtrace2+33
+ebp:0xc011ff88 eip:0xc01000f4 args:ox00000000 oxffff0000 oxc011ffb4 ox0000002a 
+    kern/init/init.c:62: grade_backtrace1+38
+ebp:0xc011ffa8 eip:0xc0100112 args:ox00000000 oxc010002a oxffff0000 ox0000001d 
+    kern/init/init.c:67: grade_backtrace0+23
+ebp:0xc011ffc8 eip:0xc0100137 args:oxc0108d5c oxc0108d40 ox00001148 ox00000000 
+    kern/init/init.c:72: grade_backtrace+34
+ebp:0xc011fff8 eip:0xc010007f args:ox00000000 ox00000000 ox0000ffff ox40cf9a00 
+    kern/init/init.c:32: kern_init+84
+memory management: default_pmm_manager
+e820map:
+  memory: 0009fc00, [00000000, 0009fbff], type = 1.
+  memory: 00000400, [0009fc00, 0009ffff], type = 2.
+  memory: 00010000, [000f0000, 000fffff], type = 2.
+  memory: 07efe000, [00100000, 07ffdfff], type = 1.
+  memory: 00002000, [07ffe000, 07ffffff], type = 2.
+  memory: 00040000, [fffc0000, ffffffff], type = 2.
+check_alloc_page() succeeded!
+check_pgdir() succeeded!
+check_boot_pgdir() succeeded!
+-------------------- BEGIN --------------------
+PDE(0e0) c0000000-f8000000 38000000 urw
+  |-- PTE(38000) c0000000-f8000000 38000000 -rw
+PDE(001) fac00000-fb000000 00400000 -rw
+  |-- PTE(000e0) faf00000-fafe0000 000e0000 urw
+  |-- PTE(00001) fafeb000-fafec000 00001000 -rw
+--------------------- END ---------------------
+check_vma_struct() succeeded!
+page fault at 0x00000100: K/W [no page found].
+check_pgfault() succeeded!
+check_vmm() succeeded.
+ide 0:      10000(sectors), 'QEMU HARDDISK'.
+ide 1:     262144(sectors), 'QEMU HARDDISK'.
+SWAP: manager = fifo swap manager
+BEGIN check_swap: count 1, total 31995
+setup Page Table for vaddr 0X1000, so alloc a page
+setup Page Table vaddr 0~4MB OVER!
+set up init env for check_swap begin!
+page fault at 0x00001000: K/W [no page found].
+page fault at 0x00002000: K/W [no page found].
+page fault at 0x00003000: K/W [no page found].
+page fault at 0x00004000: K/W [no page found].
+set up init env for check_swap over!
+write Virt Page c in fifo_check_swap
+write Virt Page a in fifo_check_swap
+write Virt Page d in fifo_check_swap
+write Virt Page b in fifo_check_swap
+write Virt Page e in fifo_check_swap
+page fault at 0x00005000: K/W [no page found].
+page fault at 0x000000ae: K/R [no page found].
+not valid addr ae, and  can not find it in vma
+trapframe at 0xc011fcf4
+  edi  0x00000001
+  esi  0x00000000
+  ebp  0xc011fd70
+  oesp 0xc011fd14
+  ebx  0x00007cfb
+  edx  0xc0303000
+  ecx  0x00005000
+  eax  0x00000092
+  ds   0x----0010
+  es   0x----0010
+  fs   0x----0023
+  gs   0x----0023
+  trap 0x0000000e Page Fault
+  err  0x00000000
+  eip  0xc01063cc
+  cs   0x----0008
+  flag 0x00000046 PF,ZF,IOPL=0
+kernel panic at kern/trap/trap.c:183:
+    handle pgfault failed. invalid parameter
+
+Welcome to the kernel debug monitor!!
+Type 'help' for a list of commands.
+K> 

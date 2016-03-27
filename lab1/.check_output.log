@@ -1,0 +1,49 @@
+(THU.CST) os is loading ...
+
+Special kernel symbols:
+  entry  0x00100000 (phys)
+  etext  0x001034aa (phys)
+  edata  0x0010ea16 (phys)
+  end    0x0010fd20 (phys)
+Kernel executable memory footprint: 64KB
+ebp:0x00007b08 eip:0x001009ab args:ox00010094 ox00000000 ox00007b38 ox00100097 
+    kern/debug/kdebug.c:305: print_stackframe+21
+ebp:0x00007b18 eip:0x00100c9a args:ox00000000 ox00000000 ox00000000 ox00007b88 
+    kern/debug/kmonitor.c:125: mon_backtrace+10
+ebp:0x00007b38 eip:0x00100097 args:ox00000000 ox00007b60 oxffff0000 ox00007b64 
+    kern/init/init.c:48: grade_backtrace2+33
+ebp:0x00007b58 eip:0x001000c0 args:ox00000000 oxffff0000 ox00007b84 ox00000029 
+    kern/init/init.c:53: grade_backtrace1+38
+ebp:0x00007b78 eip:0x001000de args:ox00000000 ox00100000 oxffff0000 ox0000001d 
+    kern/init/init.c:58: grade_backtrace0+23
+ebp:0x00007b98 eip:0x00100103 args:ox001034dc ox001034c0 ox0000130a ox00000000 
+    kern/init/init.c:63: grade_backtrace+34
+ebp:0x00007bc8 eip:0x00100055 args:ox00000000 ox00000000 ox00000000 ox00010094 
+    kern/init/init.c:28: kern_init+84
+ebp:0x00007bf8 eip:0x00007d68 args:oxc031fcfa oxc08ed88e ox64e4d08e oxfa7502a8 
+    <unknow>: -- 0x00007d67 --
+++ setup timer interrupts
+0: @ring 0
+0:  cs = 8
+0:  ds = 10
+0:  es = 10
+0:  ss = 10
++++ switch to  user  mode +++
+1: @ring 0
+1:  cs = 8
+1:  ds = 10
+1:  es = 10
+1:  ss = 10
++++ switch to kernel mode +++
+2: @ring 0
+2:  cs = 8
+2:  ds = 10
+2:  es = 10
+2:  ss = 10
+100 ticks
+End of Test.
+kernel panic at kern/trap/trap.c:18:
+    EOT: kernel seems ok.
+Welcome to the kernel debug monitor!!
+Type 'help' for a list of commands.
+K> 
